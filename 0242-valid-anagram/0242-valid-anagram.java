@@ -7,30 +7,18 @@ class Solution {
         if(sl!=tl)return false;
         
         
-        Map<Character,Integer> m = new HashMap();
-        char c = ' ';
-        for(int i=0;i<sl;i++){
-            c = s.charAt(i);
-            if(m.containsKey(c)){
-                m.put(c,m.get(c)+1);
-            }else{
-                m.put(c,1);
-            }
-        }
+      int sa[] = new int[256];
+      int ta[] = new int[256];
         
-        for(int i=0;i<tl;i++){
-            c = t.charAt(i);
-            if(m.containsKey(c) && m.get(c)!=0){
-                
-                  m.put(c,m.get(c)-1);
-                
-            }else{
-                return false;
-            }
-        }
+    for(int i=0;i<sl;i++){
+        sa[(int)s.charAt(i)]++;
+        ta[(int)t.charAt(i)]++;
+    }
         
+    if(Arrays.equals(sa,ta))return true;
         
-        return true;
+    return false;
+        
         
     }
 }
