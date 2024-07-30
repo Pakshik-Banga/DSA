@@ -18,7 +18,7 @@ class Solution {
         
         g = sb.toString();
         
-        System.out.println(g);
+        
       
         
         int i =0;
